@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Ice Cream Toggle</title>
+  </head>
+  <body style="background-color:lightblue;text-align:center">
+    <div class="container">
+        <h1 id="heading">Here's your ice cream</h1>
+      <div id="iceCream">
+        <img
+          id="iceCreamImage"
+          src="icecream.jpg"
+          alt="Filled Ice Cream" width="20%"
+        />
+      </div>
+      <button id="toggleButton">Toggle Ice Cream</button>
+
+    </div>
+    <script>
+      const toggleButton = document.getElementById("toggleButton");
+      const iceCreamImage = document.getElementById("iceCreamImage");
+      const toggleText=document.getElementById("heading");
+      let isFilled = true;
+
+      toggleButton.addEventListener("click", function () {
+        isFilled = !isFilled; // Toggle the state
+
+        if (isFilled) {
+          iceCreamImage.src = "icecream.jpg"; // Path to the filled ice cream image
+          toggleButton.textContent = "Eat Ice Cream";
+          toggleText.textContent="Here is your IceCream"
+        } else {
+          iceCreamImage.src = "cone.jpeg"; // Path to the empty cone image
+          toggleButton.textContent = "Have One More";
+          toggleText.textContent="Dont tell anyone "
+
+        }
+      });
+    </script>
+  </body>
+</html>
